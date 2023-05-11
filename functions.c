@@ -75,3 +75,9 @@ void popStack(stack_t **stack, unsigned int line_number)
     *stack = (*stack)->next;
     free(temp);
 }
+
+
+void nopStack(stack_t **stack, unsigned int line_number)
+{
+    (void)stack, (void)line_number;
+}

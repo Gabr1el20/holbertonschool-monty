@@ -55,16 +55,22 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+/* opcode functions */
 char *get_op(char *line, unsigned int line_number);
 int execute(char *opcode, stack_t **stack, unsigned int line_number);
+
+
+/* Stack functions */
 void pushStack(stack_t **head, unsigned int line_number);
 void pallStack(stack_t **head, unsigned int line_number);
-void m_pint(stack_t **stack, unsigned int line_number);
+void pintStack(stack_t **stack, unsigned int line_number);
+void popStack(stack_t **stack, unsigned int line_number);
+void nopStack(stack_t **stack, unsigned int line_number);
+
+
 void freestack(stack_t *head);
 void freeNode(stack_t *node);
-void pintStack(stack_t **stack, unsigned int line_number);
-void popStack(stack_t **, unsigned int line_number);
+
 
 extern char *value;
 
