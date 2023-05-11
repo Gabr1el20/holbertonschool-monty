@@ -81,3 +81,25 @@ void nopStack(stack_t **stack, unsigned int line_number)
 {
     (void)stack, (void)line_number;
 }
+
+void swapStack(stack_t **stack, unsigned int line_number)
+{
+    stack_t *head = *stack, *temp = head->next;
+
+    if (*stack == NULL || (*stack)->next == NULL)
+    {
+        fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+    head->prev = temp;
+    head->next = temp->next;
+
+    if (temp->next)
+    {
+        temp->next->prev = head;
+    }
+    temp->next = head;
+    temp->prev = head;
+
+    *stack = temp;
+}
