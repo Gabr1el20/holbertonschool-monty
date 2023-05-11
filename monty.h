@@ -61,6 +61,9 @@ int execute(char *opcode, stack_t **stack, unsigned int line_number);
 void pushStack(stack_t **head, unsigned int line_number);
 void pallStack(stack_t **head, unsigned int line_number);
 void m_pint(stack_t **stack, unsigned int line_number);
+void freestack(stack_t *head);
+
+extern char *value;
 
 
 

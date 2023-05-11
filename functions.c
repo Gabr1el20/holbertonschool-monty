@@ -8,31 +8,40 @@ void pushStack(stack_t **head, unsigned int line_number)
         exit(EXIT_FAILURE);
     }
     int n = atoi(value);
-    stack_t *new_node = malloc(sizeof(stack_t));
-    if (new_node == NULL)
+    stack_t *newnode = malloc(sizeof(stack_t));
+    if (newnode == NULL)
     {
         fprintf(stderr, "Error: malloc failed\n");
         exit(EXIT_FAILURE);
     }
-    new_node->n = n;
-    new_node->prev = NULL;
-    if (*head == NULL)
-        new_node->next = NULL;
+    newnode->n = n;
+    newnode->prev = NULL;
+    if (!*head)
+        newnode->next = NULL;
     else
     {
-        new_node->next = *head;
-        (*head)->prev = new_node;
+        newnode->next = *head;
+        (*head)->prev = newnode;
     }
-    *head = new_node;
-    free(new_node);
+    *head = newnode;
 }
+
 void pallStack(stack_t **head, unsigned int line_number)
 {
     stack_t *current = *head;
     (void)line_number;
-    while (current != NULL)
+    while (current)
     {
         printf("%d\n", current->n);
         current = current->next;
+    }
+}
+
+void freestack(stack_t *head)
+{
+    while (head)
+    {
+        free(head);
+        head = head->next;
     }
 }

@@ -1,11 +1,13 @@
 #include "monty.h"
-char *value;
+
 char *get_op(char *line, unsigned int line_number)
 {
-    char *opcode = strtok(line, " \n\t");
-    value = strtok(NULL, " \n\t");
+    char *opcode = NULL;
+
     (void)line_number;
+    opcode = strtok(line, " \t\n");
+    value = strtok(NULL, " \t\n");
     if (opcode == NULL || opcode[0] == '#')
-        return NULL;
-    return opcode;
+        return (NULL);
+    return (opcode);
 }
