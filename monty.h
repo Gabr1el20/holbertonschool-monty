@@ -61,11 +61,12 @@ int execute(char *opcode, stack_t **stack, unsigned int line_number);
 
 
 /* Stack functions */
-void pushStack(stack_t **head, unsigned int line_number);
-void pallStack(stack_t **head, unsigned int line_number);
+void pushStack(stack_t **stack, unsigned int line_number);
+void pallStack(stack_t **stack, unsigned int line_number);
 void pintStack(stack_t **stack, unsigned int line_number);
 void popStack(stack_t **stack, unsigned int line_number);
 void swapStack(stack_t **stack, unsigned int line_number);
+void addStack(stack_t **stack, unsigned int line_number);
 void nopStack(stack_t **stack, unsigned int line_number);
 
 
