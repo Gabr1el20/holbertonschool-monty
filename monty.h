@@ -4,6 +4,26 @@
 #include <stdlib.h>
 #include <stddef.h>
 #include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+
+/**
+ * struct var_s - struct to contain the main variables of the monty interpreter
+ * @queue: flag to determine if in stack vs queue mode
+ * @stack_len: length of the stack
+ */
+
+typedef struct var_s
+{
+	int queue;
+	size_t stack_len;
+} var_t;
+
+/* global struct to hold flag for queue an stack length */
+extern var_t var;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -40,7 +60,7 @@ char *get_op(char *line, unsigned int line_number);
 int execute(char *opcode, stack_t **stack, unsigned int line_number);
 void pushStack(stack_t **head, unsigned int line_number);
 void pallStack(stack_t **head, unsigned int line_number);
-
+void m_pint(stack_t **stack, unsigned int line_number);
 
 
 

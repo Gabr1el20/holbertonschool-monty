@@ -24,6 +24,7 @@ void pushStack(stack_t **head, unsigned int line_number)
         (*head)->prev = new_node;
     }
     *head = new_node;
+    free(new_node);
 }
 void pallStack(stack_t **head, unsigned int line_number)
 {
