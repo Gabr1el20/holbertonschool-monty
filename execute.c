@@ -3,7 +3,6 @@
 int execute(char *opcode, stack_t **stack, unsigned int line_number)
 {
     int i;
-
     instruction_t opcodes[] = {
         {"push", pushStack},
         {"pall", pallStack},
