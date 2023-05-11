@@ -9,8 +9,6 @@ int execute(char *opcode, stack_t **stack, unsigned int line_number)
         {"pall", pallStack},
         {"pint", pintStack},
         {"pop", popStack},
-        {"swap", swapStack},
-        {"add", addStack},
         {"nop", nopStack},
         {NULL, NULL}
     };
