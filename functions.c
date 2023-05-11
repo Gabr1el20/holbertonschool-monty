@@ -11,6 +11,7 @@ void pushStack(stack_t **head, unsigned int line_number)
     stack_t *newnode = malloc(sizeof(stack_t));
     if (newnode == NULL)
     {
+        freestack(newnode);
         fprintf(stderr, "Error: malloc failed\n");
         exit(EXIT_FAILURE);
     }
@@ -44,4 +45,20 @@ void freestack(stack_t *head)
         free(head);
         head = head->next;
     }
+}
+
+void freeNode(stack_t *node)
+{
+    free(node);
+}
+
+void pintStack(stack_t **stack, unsigned int line_number)
+{
+    stack_t *head = *stack;
+    if (head == NULL)
+    {
+        fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+    printf("%d\n", head->n);
 }

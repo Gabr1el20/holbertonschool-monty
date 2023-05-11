@@ -62,6 +62,8 @@ void pushStack(stack_t **head, unsigned int line_number);
 void pallStack(stack_t **head, unsigned int line_number);
 void m_pint(stack_t **stack, unsigned int line_number);
 void freestack(stack_t *head);
+void freeNode(stack_t *node);
+void pintStack(stack_t **stack, unsigned int line_number);
 
 extern char *value;
 

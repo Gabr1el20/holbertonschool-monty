@@ -28,8 +28,9 @@ int main(int argc, char *argv[])
         result = execute(opcode, &stack, line_number);
         if (result == -1)
             exit(EXIT_FAILURE);
-        free(charged_line);
     }
+    free(charged_line);
     fclose(file);
+    freestack(stack);
     exit(EXIT_SUCCESS);
 }

@@ -7,6 +7,7 @@ int execute(char *opcode, stack_t **stack, unsigned int line_number)
     instruction_t opcodes[] = {
         {"push", pushStack},
         {"pall", pallStack},
+        {"pint", pintStack},
         {NULL, NULL}
     };
 
