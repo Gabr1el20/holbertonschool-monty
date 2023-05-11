@@ -64,6 +64,7 @@ void m_pint(stack_t **stack, unsigned int line_number);
 void freestack(stack_t *head);
 void freeNode(stack_t *node);
 void pintStack(stack_t **stack, unsigned int line_number);
+void popStack(stack_t **, unsigned int line_number);
 
 extern char *value;
 
